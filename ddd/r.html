@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي التجريبي</title>
+    <style>
+        /* ===== CSS ===== */
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #121212;
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+
+        h1 {
+          color: #00ff99;
+        }
+
+        input, button {
+          padding: 10px;
+          margin: 5px;
+          border-radius: 5px;
+          border: none;
+          font-size: 16px;
+        }
+
+        button {
+          background-color: #00ff99;
+          color: #121212;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        button:hover {
+          background-color: #00cc77;
+        }
+
+        #output {
+          margin-top: 20px;
+          padding: 15px;
+          background-color: #1e1e1e;
+          border-radius: 10px;
+          width: 300px;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>مرحبا بك!</h1>
+
+<label for="name">أدخل اسمك:</label>
+<input type="text" id="name" placeholder="اسمك هنا">
+
+<label for="age">أدخل عمرك:</label>
+<input type="number" id="age" placeholder="عمرك">
+
+<button onclick="displayInfo()">أرسل</button>
+
+<div id="output"></div>
+
+<script>
+    // ===== JavaScript =====
+    function displayInfo() {
+      const name = document.getElementById('name').value.trim();
+      const age = document.getElementById('age').value.trim();
+
+      if (!name || !age) {
+        alert('يرجى إدخال الاسم والعمر');
+        return;
+      }
+
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = `<p>مرحباً، <strong>${name}</strong>!</p>
+                             <p>عمرك: <strong>${age}</strong> سنة</p>`;
+    }
+</script>
+
+</body>
+</html>
